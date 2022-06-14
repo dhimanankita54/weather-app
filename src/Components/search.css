@@ -9,6 +9,8 @@
         box-shadow: 0 0 10px lightgrey;
     border: none;
     cursor: pointer;
+    padding-left: 37px;
+    font-weight: bold;
 }
 .input:hover{
     -webkit-box-shadow: 0 0 30px lightgrey;
@@ -19,4 +21,15 @@
     outline: none;
     -webkit-box-shadow: 0 0 30px lightgrey;
     box-shadow: 0 0 30px lightgrey;
+}
+.input::placeholder{
+    color: black;
+    font-weight: bold;
+}
+
+.location{
+    width: 30px;
+    position: absolute;
+    top: 20px;
+    padding-left: 5px;
 }
