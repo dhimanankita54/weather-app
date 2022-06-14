@@ -1,0 +1,22 @@
+.input{
+    width: 60%;
+    margin: 10px 0;
+    padding: 10px;
+    height: 32px;
+    border-radius: 5px;
+    font-size: 15px;
+    -webkit-box-shadow: 0 0 10px lightgrey;
+        box-shadow: 0 0 10px lightgrey;
+    border: none;
+    cursor: pointer;
+}
+.input:hover{
+    -webkit-box-shadow: 0 0 30px lightgrey;
+        box-shadow: 0 0 30px lightgrey;
+}
+
+.input:focus{
+    outline: none;
+    -webkit-box-shadow: 0 0 30px lightgrey;
+    box-shadow: 0 0 30px lightgrey;
+}
