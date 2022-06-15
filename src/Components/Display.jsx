@@ -13,13 +13,6 @@ function DisplayWeather(props) {
             {data.cod != 404 ? (
                 <React.Fragment>
                     <div className="maincard">
-                        <span className="cardtitle">
-                            {data.name} , {data.sys.country}. Weather
-                        </span>
-                        <span className="cardsubtitle">
-                            As of {new Date().toLocaleTimeString()}
-                        </span>
-
                         <h1>
                             {" "}
                             {Math.floor(data.main.temp - 273.15)}
@@ -27,56 +20,33 @@ function DisplayWeather(props) {
                         </h1>
                         <span className="weather-main">{data.weather[0].main}</span>
                         <img className="weather-icon" src={iconurl} alt="" srcset="" />
-                        <span className="weather-description">
-                            {" "}
-                            {data.weather[0].description}
-                        </span>
+
                     </div>
                     <div className="weatherdetails">
                         <div className="section1">
-                            <table>
-                                <tr>
-                                    <td>
-                                        <h4>Humidity</h4>
-                                    </td>
-                                    <td>
-                                        <span>{data.main.humidity} %</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <h4>Sunrise</h4>
-                                    </td>
-                                    <td>
-                                        <span>
-                                            {new Date(data.sys.sunrise * 1000).toLocaleTimeString()}
-                                        </span>
-                                    </td>
-                                </tr>
-                            </table>
+                            <div className="detail">
+                                <h4>Humidity</h4>
+                                <p>{data.main.humidity} %</p>
+                            </div>
+                            <div className="detail">
+                                <h4>Sunrise</h4>
+                                <p>
+                                    {new Date(data.sys.sunrise * 1000).toLocaleTimeString()}
+                                </p>
+                            </div>
                         </div>
 
                         <div className="section2">
-                            <table>
-                                <tr>
-                                    <td>
-                                        <h4>Pressure</h4>
-                                    </td>
-                                    <td>
-                                        <span>{data.main.pressure} hPa</span>
-                                    </td>
-                                </tr>
-                                <tr>
-                                    <td>
-                                        <h4>Sunset</h4>
-                                    </td>
-                                    <td>
-                                        <span>
-                                            {new Date(data.sys.sunset * 1000).toLocaleTimeString()}
-                                        </span>
-                                    </td>
-                                </tr>
-                            </table>
+                            <div className="detail">
+                                <h4>Pressure</h4>
+                                <p>{data.main.pressure} hPa</p>
+                            </div>
+                            <div className="detail">
+                                <h4>Sunset</h4>
+                                <p>
+                                    {new Date(data.sys.sunset * 1000).toLocaleTimeString()}
+                                </p>
+                            </div>
                         </div>
                     </div>
                 </React.Fragment>

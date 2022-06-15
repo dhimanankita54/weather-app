@@ -1,0 +1,46 @@
+.upcoming-weather-cards {
+    width: 490px;
+    display: flex;
+    text-align: center;
+
+}
+
+.upcoming-weather-card {
+    flex: 1;
+    justify-content: space-evenly;
+}
+
+.day-of-week {
+    font-weight: bold;
+    margin-bottom: 0px;
+}
+
+.temps {
+    display: flex;
+    justify-content: center;
+}
+
+.high-temp,
+.low-temp {
+    margin-top: 0px;
+    padding: 0 0.4em;
+    font-size: 0.9em;
+    font-weight: bold;
+}
+
+.desc{
+    font-weight: bold;
+}
+
+.todays-forecast {
+    text-align: center;
+    color: #444054;
+    font-size: 0.9em;
+    padding: 0 0.3em;
+}
+
+.week-container{
+    display: flex;
+    width: 65%;
+    margin-left: 17%;
+}

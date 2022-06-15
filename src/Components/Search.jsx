@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import DisplayWeather from "./Display";
 import './search.css';
 import { IoLocationSharp } from "react-icons/io5";
+import UpcomingWeatherCardContainer from "./weekweather";
 
 export const Search = () => {
 
@@ -24,16 +25,16 @@ export const Search = () => {
         }
     }
 
-    const handleKeyPress = (e)=>{
-        if(e.key === 'Enter'){
+    const handleKeyPress = (e) => {
+        if (e.key === 'Enter') {
             console.log('enter press here! ')
             weatherData(e)
-          }
+        }
     }
 
     return (
         <div>
-            <img className="location" src="https://cdn-icons-png.flaticon.com/128/484/484167.png"/> 
+            <img className="location" src="https://cdn-icons-png.flaticon.com/128/484/484167.png" />
             <input
                 className="input"
                 type='text'
@@ -41,11 +42,12 @@ export const Search = () => {
                 value={city}
                 onChange={(e) => setcity(e.target.value)}
                 onKeyPress={(e) => handleKeyPress(e)}
-                
+
             />
-            
+
             {data.data !== undefined ? (
                 <div>
+                    <UpcomingWeatherCardContainer location={city} />
                     <DisplayWeather data={data.data} />
                 </div>
             ) : null}

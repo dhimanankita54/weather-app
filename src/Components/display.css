@@ -1,53 +1,38 @@
 .displayweather {
-    margin-top: 20px;
-    display: flex;
-    flex-flow: column nowrap;
+    width: 62%;
+    margin-top: 20px !important;
+    padding: 10px;
+    margin: auto;
+    -webkit-box-shadow: 0 0 10px lightgrey;
+        box-shadow: 0 0 10px lightgrey;
 }
 
 .displayweather .maincard {
-    width: 500px;
-    margin-top: 20px;
-    align-self: center;
-    padding: 50px;
-    border-radius: 20px;
+    /* width: 150px; */
+    margin-top: 10px;
+    align-self: left;
+    margin-left: 1%;
+    padding: 0 10px;
     position: relative;
-    background: rgb(245, 242, 242);
-    border: 1px solid black;
 }
 
-.displayweather .maincard .cardtitle {
-    position: absolute;
-    top: 10px;
-    left: 10px;
-    font-size: 1.5rem;
-}
-
-.displayweather .maincard .cardsubtitle {
-    position: absolute;
-    left: 10px;
-
-    color: grey;
-    margin-top: -8px;
-}
 
 .displayweather h1 {
-    font-size: 5rem;
-    margin: -10px;
-    margin-left: -150px;
+    font-size: 2rem;
+    text-align: left;
 }
 
 .displayweather .weather-icon {
     width: 100px;
-
     position: absolute;
-    top: 50px;
+    top: -20px;
+    margin-left: -45%;
 }
 
 .displayweather .weather-main {
     position: absolute;
-
-    top: 120px;
-    left: 310px;
+    top: 60px;
+    left: 12px;
     font-weight: 500;
     font-size: 1.2rem;
 }
@@ -70,19 +55,39 @@
 
 .displayweather .weatherdetails .section1 {
     justify-self: right;
-    width: 300px;
+    width: 450px;
+    margin-right: 1px;
+    margin-top: 20px;
+}
+
+.displayweather .weatherdetails .section2 {
+    justify-self: left;
+    width: 430px;
+    margin-left: 1px;
+    margin-top: 20px;
 }
 
 h4 {
     text-align: left;
     margin-right: 30px;
     font-size: 1.2rem;
+    margin-bottom: 0;
+    margin-top: 0;
 }
 
-td {
-    border-bottom: 2px dashed grey;
+.detail{
+    /* display: flex;
+    justify-content: space-between; */
+    padding: 10px;
+    background-color: aliceblue;
+    margin: 10px 0;
 }
 
-.displayweather .weatherdetails span {
-    font-size: 1.2rem;
+.detail>p{
+    font-size: 15px;
+    text-align: left;
+    margin: 0 ;
+    padding: 0 ;
+
 }
+
