@@ -3,6 +3,7 @@ import DisplayWeather from "./Display";
 import './search.css';
 import { IoLocationSharp } from "react-icons/io5";
 import UpcomingWeatherCardContainer from "./weekweather";
+import LineGraph from "./Graph";
 
 export const Search = () => {
 

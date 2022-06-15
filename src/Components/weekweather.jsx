@@ -2,6 +2,7 @@
 import React from "react";
 import { UpcomingWeatherCard } from "./weekCard";
 import './forecast.css';
+import LineGraph from "./Graph";
 
 class UpcomingWeatherCardContainer extends React.Component {
     constructor(props) {
