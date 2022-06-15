@@ -38,7 +38,7 @@ class UpcomingWeatherCardContainer extends React.Component {
         const urlToFetch = `${weatherUrl}?&q=${this.state.location
             }&APPID=${openWeatherKey}&units=metric`;
 
-   
+
 
         fetch(urlToFetch)
             .then(results => {
@@ -68,7 +68,7 @@ class UpcomingWeatherCardContainer extends React.Component {
             fiveDayForecast.push({
                 dayOfWeek: "",
                 weatherType: "",
-                weatherIcon:'',
+                weatherIcon: '',
                 minTemp: "N/A",
                 maxTemp: "N/A",
             });

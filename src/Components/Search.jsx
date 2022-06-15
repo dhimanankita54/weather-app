@@ -3,13 +3,14 @@ import DisplayWeather from "./Display";
 import './search.css';
 import { IoLocationSharp } from "react-icons/io5";
 import UpcomingWeatherCardContainer from "./weekweather";
-import LineGraph from "./Graph";
+import { Line } from "react-chartjs-2";
 
 export const Search = () => {
 
     const key = '00e1066df152855de0ff69878024b778';
     const [city, setcity] = useState('');
     const [data, setdata] = useState([]);
+    const [uptemps, settemps] = useState('');
 
     async function weatherData(e) {
         e.preventDefault();
@@ -33,6 +34,11 @@ export const Search = () => {
         }
     }
 
+
+    const getUpcomingTempForGraph = temps => {
+        settemps(temps)
+    }
+
     return (
         <div>
             <img className="location" src="https://cdn-icons-png.flaticon.com/128/484/484167.png" />
@@ -43,7 +49,6 @@ export const Search = () => {
                 value={city}
                 onChange={(e) => setcity(e.target.value)}
                 onKeyPress={(e) => handleKeyPress(e)}
-
             />
 
             {data.data !== undefined ? (
