@@ -20,10 +20,6 @@ export const Search = () => {
      });
  } ,[])   
 
-    const getUpcomingTempForGraph = temps => {
-        settemps(temps)
-    }
-
     return (
         <div>
             <img className="location" src="https://cdn-icons-png.flaticon.com/128/484/484167.png" />
