@@ -1,13 +1,41 @@
+import React from 'react';
 import { useEffect, useState } from "react"
-import { Line } from "react-chartjs-2"
+import * as ReactDOM from 'react-dom';
+import { Line } from "react-chartjs-2";
+import { PaperLineChart } from 'react-materialui-charts';
+import './forecast.css'
+import {
+    Chart as ChartJS,
+    CategoryScale,
+    LinearScale,
+    PointElement,
+    LineElement,
+    Title,
+    Tooltip,
+    Legend,
+} from 'chart.js';
 
-export const Chart = ({ location }) => {
+ChartJS.register(
+    CategoryScale,
+    LinearScale,
+    PointElement,
+    LineElement,
+    Title,
+    Tooltip,
+    Legend
+);
+
+
+export const Graph = ({ location }) => {
 
     const [chartData, setChartData] = useState({
         apiData: {},
         time: [],
         temp: []
     })
+
+    const [chartTime, setChartTime] = useState([]);
+    const [chartTemp, setCharttemp] = useState([]);
 
     const getData = () => {
 
@@ -56,11 +84,11 @@ export const Chart = ({ location }) => {
         fiveDayAPIDataList.forEach((x) => {
             currentDayIndex++;
             if (currentDayIndex <= 9) {
-                        upcomingTemps.push({
-                            temp: Math.round(x.main.temp),
-                            time: getDayTime(x.dt * 1000)
-                        });
-                    }
+                upcomingTemps.push({
+                    temp: Math.round(x.main.temp),
+                    time: getDayTime(x.dt * 1000)
+                });
+            }
         })
 
         var temps = [];
@@ -71,13 +99,13 @@ export const Chart = ({ location }) => {
             times.push(upcomingTemps[i].time);
         }
 
-        setChartData({ ...chartData, time: times });
-        setChartData({ ...chartData, temp: temps })
+        setChartTime(times);
+        setCharttemp(temps)
 
     }
 
     const graph = {
-        labels: chartData.time,
+        labels: chartTime,
         datasets: [
             {
                 label: "Degrees",
@@ -89,10 +117,13 @@ export const Chart = ({ location }) => {
                 pointStyle: "#00a9cb",
                 radius: 8,
                 hoverRadius: 10,
-                data: chartData.temp
+                data: chartTemp
             }
         ]
     }
+
+    console.log(graph.labels, graph.datasets[0].data)
+
 
     const getDayTime = data => {
         return new Intl.DateTimeFormat("en-US", {
@@ -101,10 +132,26 @@ export const Chart = ({ location }) => {
             weekday: "short",
         }).format(data);
     };
-return (
+    return (
         <div>
-           {/* <Line data={graph} /> */}
-
+            <div className='graph'>
+                <Line data={graph}
+                    type="line"
+                    width={160}
+                    height={60}
+                    options={{
+                        title: {
+                            display: true,
+                            text: "Temperatures",
+                            fontSize: 20
+                        },
+                        legend: {
+                            display: true, //Is the legend shown?
+                            position: "top" //Position of the legend.
+                        }
+                    }}
+                />
+            </div>
         </div>
     )
 }
