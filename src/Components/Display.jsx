@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import "./display.css";
 
 
@@ -8,6 +8,9 @@ function DisplayWeather(props) {
         "http://openweathermap.org/img/wn/" +
         `${data.cod != 404 ? data.weather[0].icon : null}` +
         ".png";
+
+    
+        
     return (
         <div className="displayweather">
             {data.cod != 404 ? (

@@ -4,6 +4,8 @@ import './search.css';
 import { IoLocationSharp } from "react-icons/io5";
 import UpcomingWeatherCardContainer from "./weekweather";
 import { Line } from "react-chartjs-2";
+import LineGraph from "./Chart";
+import { Chart } from "./DrawChart";
 
 export const Search = () => {
 
@@ -12,13 +14,17 @@ export const Search = () => {
     const [data, setdata] = useState([]);
     const [uptemps, settemps] = useState('');
 
- useEffect(() => {
-     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${key}`)
-     .then((res) => res.json())
-     .then((data) => {
-         setdata({data})
-     });
- } ,[])   
+    useEffect(() => {
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${key}`)
+            .then((res) => res.json())
+            .then((data) => {
+                setdata({ data })
+            });
+    }, [])
+
+    const getUpComingtempsforGraph = temp => {
+        settemps(temp)
+    }
 
     return (
         <div>
@@ -31,7 +37,9 @@ export const Search = () => {
             />
             {data.data !== undefined ? (
                 <div>
-                    <UpcomingWeatherCardContainer location={city} />
+                    <UpcomingWeatherCardContainer location={city} getUpComingtempsforGraph={getUpComingtempsforGraph} />
+                    {/* <LineGraph  location={city}/> */}
+                    <Chart location={city} />
                     <DisplayWeather data={data.data} />
                 </div>
             ) : null}
