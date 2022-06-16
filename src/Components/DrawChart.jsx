@@ -101,12 +101,10 @@ export const Chart = ({ location }) => {
             weekday: "short",
         }).format(data);
     };
-
-
-
-    return (
+return (
         <div>
-           <Line data={graph} />
+           {/* <Line data={graph} /> */}
+
         </div>
     )
 }
