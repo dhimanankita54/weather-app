@@ -2,6 +2,7 @@ import React from 'react';
 import { useEffect, useState } from "react"
 import * as ReactDOM from 'react-dom';
 import { Line } from "react-chartjs-2";
+import { PaperLineChart } from 'react-materialui-charts';
 import './forecast.css'
 import {
     Chart as ChartJS,

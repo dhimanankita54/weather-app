@@ -4,7 +4,6 @@ import './search.css';
 import { IoLocationSharp } from "react-icons/io5";
 import UpcomingWeatherCardContainer from "./weekweather";
 import { Line } from "react-chartjs-2";
-import LineGraph from "./Chart";
 import { Graph } from "./DrawChart";
 
 export const Search = () => {
@@ -38,7 +37,6 @@ export const Search = () => {
             {data.data !== undefined ? (
                 <div>
                     <UpcomingWeatherCardContainer location={city} getUpComingtempsforGraph={getUpComingtempsforGraph} />
-                    {/* <LineGraph  location={city}/> */}
                     <Graph location={city} />
                     <DisplayWeather data={data.data} />
                 </div>
