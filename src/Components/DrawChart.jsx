@@ -2,7 +2,6 @@ import React from 'react';
 import { useEffect, useState } from "react"
 import * as ReactDOM from 'react-dom';
 import { Line } from "react-chartjs-2";
-import { PaperLineChart } from 'react-materialui-charts';
 import './forecast.css'
 import {
     Chart as ChartJS,
@@ -68,18 +67,6 @@ export const Graph = ({ location }) => {
         let fiveDayForecast = [];
         let currentDayIndex = 0;
         let upcomingTemps = [];
-
-        // for (let i = 0; i < fiveDayAPIDataList.length; i++) {
-        //     currentDayIndex++;
-        //     // if (currentDayIndex > 4) break;
-
-        //     if (currentDayIndex <= 9) {
-        //         upcomingTemps.push({
-        //             temp: Math.round(fiveDayAPIDataList[i].main.temp),
-        //             time: getDayTime(fiveDayAPIDataList[i].dt * 1000)
-        //         });
-        //     }
-        // }
 
         fiveDayAPIDataList.forEach((x) => {
             currentDayIndex++;
