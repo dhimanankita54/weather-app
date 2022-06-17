@@ -5,7 +5,7 @@ import './forecast.css';
 export const UpcomingWeatherCard = props => {
 
     return props.fiveDayForecast.map((forecast, i) => {
-        const iconUrl = "http://openweathermap.org/img/wn/" +
+        const iconUrl = "https://openweathermap.org/img/wn/" +
             `${forecast.weatherIcon}` +
             ".png";
 
