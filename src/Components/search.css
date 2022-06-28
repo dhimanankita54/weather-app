@@ -36,3 +36,10 @@
     padding-left: 5px;
 }
 
+.data{
+    -webkit-box-shadow: 0 0 10px lightgrey;
+    box-shadow: 0 0 10px lightgrey;
+    width: 62%;
+    margin: auto;
+}
+

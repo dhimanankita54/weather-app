@@ -1,8 +1,7 @@
 import React from 'react';
 import { useEffect, useState } from "react"
-import * as ReactDOM from 'react-dom';
 import { Line } from "react-chartjs-2";
-import { PaperLineChart } from 'react-materialui-charts';
+import Chart from "react-apexcharts";
 import './forecast.css'
 import {
     Chart as ChartJS,
@@ -13,6 +12,7 @@ import {
     Title,
     Tooltip,
     Legend,
+    Filler,
 } from 'chart.js';
 
 ChartJS.register(
@@ -22,7 +22,8 @@ ChartJS.register(
     LineElement,
     Title,
     Tooltip,
-    Legend
+    Legend,
+    Filler
 );
 
 
@@ -92,25 +93,36 @@ export const Graph = ({ location }) => {
 
     }
 
-    const graph = {
-        labels: chartTime,
-        datasets: [
-            {
-                label: "Degrees",
-                fill: false,
-                lineTension: 0.5,
-                backgroundColor: "#00a9cb",
-                borderColor: "#00a9cb",
-                borderWidth: 0,
-                pointStyle: "#00a9cb",
-                radius: 8,
-                hoverRadius: 10,
+    var graph = {
+        options: {
+            series: [{
+                name: 'series2',
                 data: chartTemp
-            }
-        ]
+            }],
+            chart: {
+                height: 150,
+                type: 'area'
+            },
+            dataLabels: {
+                enabled: false
+            },
+            stroke: {
+                curve: 'smooth'
+            },
+            xaxis: {
+                // type: 'datetime',
+                categories: chartTime
+            },
+            tooltip: {
+                x: {
+                    format: 'dd/MM/yy HH:mm'
+                },
+            },
+        }
     }
 
-    console.log(graph.labels, graph.datasets[0].data)
+    console.log(graph.options.series)
+    console.log(chartTemp)
 
 
     const getDayTime = data => {
@@ -123,23 +135,14 @@ export const Graph = ({ location }) => {
     return (
         <div>
             <div className='graph'>
-                <Line data={graph}
-                    type="line"
-                    width={160}
-                    height={60}
-                    options={{
-                        title: {
-                            display: true,
-                            text: "Temperatures",
-                            fontSize: 20
-                        },
-                        legend: {
-                            display: true, //Is the legend shown?
-                            position: "top" //Position of the legend.
-                        }
-                    }}
+                <Chart
+                    options={graph.options}
+                    series={graph.options.series}
+                    width="750"
+                    type='line'
                 />
+
             </div>
-        </div>
+        </div >
     )
 }

@@ -35,13 +35,17 @@ export const Search = () => {
                 onChange={(e) => setcity(e.target.value)}
             />
             {data.data !== undefined ? (
-                <div>
+                <>
                     <UpcomingWeatherCardContainer location={city} getUpComingtempsforGraph={getUpComingtempsforGraph} />
-                    <Graph location={city} />
-                    <DisplayWeather data={data.data} />
-                </div>
+                    <div className="data">
+
+                        <Graph location={city} />
+                        <DisplayWeather data={data.data} />
+                    </div>
+                </>
             ) : null}
 
         </div>
+
     )
 }
