@@ -5,6 +5,7 @@ import { IoLocationSharp } from "react-icons/io5";
 import UpcomingWeatherCardContainer from "./weekweather";
 import { Line } from "react-chartjs-2";
 import { Graph } from "./DrawChart";
+import { SunGraph } from "./SunTime";
 
 export const Search = () => {
 
@@ -52,6 +53,7 @@ export const Search = () => {
                         <img className="weather-icon" src={iconurl} alt="" srcset="" />
                         <Graph location={city} />
                         <DisplayWeather data={data.data} />
+                        <SunGraph data={data.data}/>
                     </div>
                 </>
             ) : null}

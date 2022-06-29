@@ -47,11 +47,12 @@
     text-align: left;
     margin: 20px 40px 10px 10px;
     padding: 30px 0 0 30px;
+    font-size: 3rem;
 }
 
 .weather-icon {
-    width: 70px !important;
+    width: 85px !important;
     position: absolute;
-    margin-left: -25%;
-    top: 41%;
+    margin-left: -23%;
+    top: 43%;
 }

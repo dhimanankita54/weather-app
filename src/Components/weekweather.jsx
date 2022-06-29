@@ -148,6 +148,8 @@ class UpcomingWeatherCardContainer extends React.Component {
         this.props.getUpcomingTempForGraph(upcomingTemps);
     };
 
+    
+
     getDays = data => {
         return new Intl.DateTimeFormat("en-US", { weekday: "short" }).format(data);
     };
