@@ -15,7 +15,7 @@ function DisplayWeather(props) {
         <div className="displayweather">
             {data.cod != 404 ? (
                 <React.Fragment>
-                    <div className="maincard">
+                    {/* <div className="maincard">
                         <h1>
                             {" "}
                             {Math.floor(data.main.temp - 273.15)}
@@ -24,7 +24,7 @@ function DisplayWeather(props) {
                         <span className="weather-main">{data.weather[0].main}</span>
                         <img className="weather-icon" src={iconurl} alt="" srcset="" />
 
-                    </div>
+                    </div> */}
                     <div className="weatherdetails">
                         <div className="section1">
                             <div className="detail">

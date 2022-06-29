@@ -12,14 +12,24 @@ export const Search = () => {
     const [city, setcity] = useState('Delhi');
     const [data, setdata] = useState([]);
     const [uptemps, settemps] = useState('');
+    const [mainTemp, setmainTemp] = useState('');
+    const [icon, setIcon] = useState('');
 
     useEffect(() => {
-        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${key}`)
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&APPID=${key}&units=metric`)
             .then((res) => res.json())
             .then((data) => {
                 setdata({ data })
+                console.log(data.weather[0])
+                setmainTemp(Math.round(data.main.temp))
+                setIcon(data.weather[0].icon)
             });
     }, [])
+
+    const iconurl =
+        "https://openweathermap.org/img/wn/" +
+        `${icon}` +
+        ".png";
 
     const getUpComingtempsforGraph = temp => {
         settemps(temp)
@@ -38,6 +48,8 @@ export const Search = () => {
                 <>
                     <UpcomingWeatherCardContainer location={city} getUpComingtempsforGraph={getUpComingtempsforGraph} />
                     <div className="data">
+                        <h1 className="main-temp">{mainTemp}<sup>o</sup></h1>
+                        <img className="weather-icon" src={iconurl} alt="" srcset="" />
                         <Graph location={city} />
                         <DisplayWeather data={data.data} />
                     </div>
