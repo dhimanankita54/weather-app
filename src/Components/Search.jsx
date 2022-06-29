@@ -38,7 +38,6 @@ export const Search = () => {
                 <>
                     <UpcomingWeatherCardContainer location={city} getUpComingtempsforGraph={getUpComingtempsforGraph} />
                     <div className="data">
-
                         <Graph location={city} />
                         <DisplayWeather data={data.data} />
                     </div>

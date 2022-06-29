@@ -46,7 +46,8 @@
 }
 
 .graph{
-    width: 60%;
-    margin-left: 10%;
+    width: 95%;
+    margin-left: 2%;
     margin-top: 10px;
+    padding: 10px;
 }

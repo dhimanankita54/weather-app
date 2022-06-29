@@ -1,7 +1,7 @@
 import React from 'react';
 import { useEffect, useState } from "react"
 import { Line } from "react-chartjs-2";
-import Chart from "react-apexcharts";
+import ReactApexChart from "react-apexcharts";
 import './forecast.css'
 import {
     Chart as ChartJS,
@@ -27,7 +27,9 @@ ChartJS.register(
 );
 
 
-export const Graph = ({ location }) => {
+export const Graph = (props) => {
+
+    const { location } = props;
 
     const [chartData, setChartData] = useState({
         apiData: {},
@@ -72,7 +74,7 @@ export const Graph = ({ location }) => {
 
         fiveDayAPIDataList.forEach((x) => {
             currentDayIndex++;
-            if (currentDayIndex <= 9) {
+            if (currentDayIndex <= 12) {
                 upcomingTemps.push({
                     temp: Math.round(x.main.temp),
                     time: getDayTime(x.dt * 1000)
@@ -93,15 +95,21 @@ export const Graph = ({ location }) => {
 
     }
 
+    // console.log(graph.series)
+    // // console.log(chartTime.toString().split(','))
+
     var graph = {
+        series: [{
+            name: "Temperature",
+            data: chartTemp
+        }],
         options: {
-            series: [{
-                name: 'series2',
-                data: chartTemp
-            }],
             chart: {
-                height: 150,
-                type: 'area'
+                type: 'area',
+                height: 350,
+                zoom: {
+                    enabled: false
+                }
             },
             dataLabels: {
                 enabled: false
@@ -109,25 +117,24 @@ export const Graph = ({ location }) => {
             stroke: {
                 curve: 'smooth'
             },
-            xaxis: {
-                // type: 'datetime',
-                categories: chartTime
+            labels: chartTime,
+            // xaxis: {
+            //     type: 'datetime',
+            // },
+            yaxis: {
+                opposite: false
             },
-            tooltip: {
-                x: {
-                    format: 'dd/MM/yy HH:mm'
-                },
-            },
-        }
-    }
+            legend: {
+                horizontalAlign: 'left'
+            }
+        },
 
-    console.log(graph.options.series)
-    console.log(chartTemp)
+    }
 
 
     const getDayTime = data => {
         return new Intl.DateTimeFormat("en-US", {
-            day: "2-digit",
+            //  day: "2-digit",
             hour: "2-digit",
             weekday: "short",
         }).format(data);
@@ -135,12 +142,7 @@ export const Graph = ({ location }) => {
     return (
         <div>
             <div className='graph'>
-                <Chart
-                    options={graph.options}
-                    series={graph.options.series}
-                    width="750"
-                    type='line'
-                />
+            <ReactApexChart options={graph.options} series={graph.series} type="area" height={350} />
 
             </div>
         </div >
