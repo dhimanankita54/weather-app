@@ -29,30 +29,16 @@
     font-weight: bold;
 }
 
-.location {
-    width: 30px;
+.search-icon {
+    width: 25px !important;
     position: absolute;
-    top: 20px;
-    padding-left: 5px;
+    margin-left: -3%;
+    top: 3%;
 }
 
-.data {
-    -webkit-box-shadow: 0 0 10px lightgrey;
-    box-shadow: 0 0 10px lightgrey;
-    width: 62%;
-    margin: auto;
-}
-
-.main-temp {
-    text-align: left;
-    margin: 20px 40px 10px 10px;
-    padding: 30px 0 0 30px;
-    font-size: 3rem;
-}
-
-.weather-icon {
-    width: 85px !important;
+.location-icon{
+    width: 45px !important;
     position: absolute;
-    margin-left: -23%;
-    top: 43%;
+    margin-left: -63%;
+    top: 3%;
 }

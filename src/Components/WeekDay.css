@@ -1,0 +1,10 @@
+.week-day{
+    display: flex;
+    margin: auto;
+    width: 64%;
+    justify-content: space-evenly;
+}
+
+.font{
+    font-weight: 700;
+}
