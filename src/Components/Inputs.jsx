@@ -46,6 +46,9 @@ function Inputs({ setQuery, units, setUnits }) {
           className="search-icon text-white cursor-pointer transition ease-out hover:scale-125"
           onClick={handleSearchClick}
         />
+        {/* <div className="text-tag">
+          <p>Search</p>
+        </div> */}
         <UilLocationPoint
           size={25}
           className="location-icon text-white cursor-pointer transition ease-out hover:scale-125"

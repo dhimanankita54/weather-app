@@ -44,3 +44,18 @@
     top: 3%;
     cursor: pointer;
 }
+
+.text-tag{
+    font-size: 1.1rem;
+    margin-left: 49%;
+    margin-top: -2%;
+    visibility: hidden;
+}
+
+.text-tag>p{
+    visibility: hidden;
+}
+
+.text-tag:hover>p{
+    visibility: visible;
+}
