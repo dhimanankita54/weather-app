@@ -24,8 +24,6 @@ export const Graph = (props) => {
         const urlToFetch = `${weatherUrl}?&q=${location
             }&APPID=${openWeatherKey}&units=metric`;
 
-
-
         fetch(urlToFetch)
             .then(results => {
                 return results.json();

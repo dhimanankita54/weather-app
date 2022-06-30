@@ -19,7 +19,7 @@ function DisplayWeather(props) {
                         <div className="section1">
                             <div className="detail">
                                 <h4>Pressure</h4>
-                                <p className="sun-time">{data.main.pressure} %</p>
+                                <p className="sun-time">{data.main.pressure} hPa</p>
                             </div>
                             <div className="sunrise">
                                 <h4>Sunrise</h4>
@@ -32,7 +32,7 @@ function DisplayWeather(props) {
                         <div className="section2">
                             <div className="detail">
                                 <h4>Humidity</h4>
-                                <p className="sun-time">{data.main.humidity} hPa</p>
+                                <p className="sun-time">{data.main.humidity} %</p>
                             </div>
                             <div className="sunset">
                                 <h4>Sunset</h4>

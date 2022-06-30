@@ -6,6 +6,7 @@ import UpcomingWeatherCardContainer from "./weekweather";
 import { Line } from "react-chartjs-2";
 import { Graph } from "./DrawChart";
 import { SunGraph } from "./SunTime";
+import { TempGraph } from "./TempGraph";
 
 export const Search = () => {
 
@@ -21,7 +22,7 @@ export const Search = () => {
             .then((res) => res.json())
             .then((data) => {
                 setdata({ data })
-                console.log(data.weather[0])
+                // console.log(data.weather[0])
                 setmainTemp(Math.round(data.main.temp))
                 setIcon(data.weather[0].icon)
             });
@@ -51,9 +52,11 @@ export const Search = () => {
                     <div className="data">
                         <h1 className="main-temp">{mainTemp}<sup>o</sup></h1>
                         <img className="weather-icon" src={iconurl} alt="" srcset="" />
-                        <Graph location={city} />
+                        <TempGraph location={city}/>
+                        {/* <Graph location={city} /> */}
                         <DisplayWeather data={data.data} />
                         <SunGraph data={data.data}/>
+                       
                     </div>
                 </>
             ) : null}
