@@ -11,7 +11,7 @@ function Suntime({
 }) {
 
     return (
-        <div className="temp-detail">
+        <div className="sun-detail">
             <div className="sunrise">
                 <h3>Sunrise</h3>
                 <p>{formatToLocalTime(sunrise, timezone, "hh:mm a")}</p>

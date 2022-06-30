@@ -5,8 +5,8 @@
     height: 32px;
     border-radius: 5px;
     font-size: 15px;
-    -webkit-box-shadow: 0 0 10px lightgrey;
-    box-shadow: 0 0 10px lightgrey;
+    -webkit-box-shadow: 0 0 20px lightgrey;
+    box-shadow: 0 0 20px lightgrey;
     border: none;
     cursor: pointer;
     padding-left: 37px;
@@ -34,11 +34,13 @@
     position: absolute;
     margin-left: -3%;
     top: 3%;
+    cursor: pointer;
 }
 
-.location-icon{
+.location-icon {
     width: 45px !important;
     position: absolute;
     margin-left: -53%;
     top: 3%;
+    cursor: pointer;
 }
