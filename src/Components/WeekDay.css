@@ -1,10 +1,14 @@
 .week-day{
     display: flex;
     margin: auto;
-    width: 64%;
+    width: 55%;
     justify-content: space-evenly;
 }
 
 .font{
     font-weight: 700;
+}
+
+.graph{
+ padding: 20px;   
 }

@@ -1,17 +1,17 @@
 .forecast-data {
-    width: 63%;
+    width: 53%;
     margin: auto;
     -webkit-box-shadow: 0 0 10px lightgrey;
     box-shadow: 0 0 10px lightgrey;
 }
 
-.current{
+.current {
     display: flex;
     padding: 30px 0 0px 30px;
     margin: 0;
 }
 
-.text{
+.text {
     text-align: left;
     font-size: 3rem;
     font-weight: 700;
@@ -19,8 +19,68 @@
     /* padding: 30px 0 0 30px; */
 }
 
-.temp-icon{
+.temp-icon {
     width: 80px;
     margin: 0;
     margin-top: -5px;
+}
+
+.temp-detail {
+    display: flex;
+    justify-content: space-between;
+    grid-gap: 10px;
+}
+
+.pressure {
+    text-align: left;
+    width: 50%;
+    padding: 10px 20px;
+    height: 49px;
+    background-color: #f3fbff;
+}
+
+.pressure h3, .pressure>p {
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    color: #2c3e50;
+}
+
+.humidity {
+    width: 50%;
+    padding: 10px 20px;
+    height: 49px;
+    background-color: #f3fbff;
+}
+
+.humidity h3, .humidity>p {
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    color: #2c3e50;
+}
+
+.sunrise {
+    width: 50%;
+    padding: 10px;
+}
+
+.sunset {
+    width: 50%;
+    padding: 10px;
+    /* height: 49px; */
+}
+
+.sunrise>h3, .sunrise>p {
+    text-align: left;
+    margin: 0;
+    padding: 0;
+    color: #2c3e50;
+}
+
+.sunset>h3, .sunset>p{
+    text-align: right;
+    margin: 0;
+    padding: 0;
+    color: #2c3e50;
 }

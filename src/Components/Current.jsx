@@ -2,7 +2,7 @@ import React from "react";
 import { formatToLocalTime, iconUrlFromCode } from "./service/weather";
 import './main.css';
 
-function TempDetails({
+function CurrentTemp({
     weather: {
         temp,
         icon
@@ -17,4 +17,4 @@ function TempDetails({
     )
 }
 
-export default TempDetails;
+export default CurrentTemp;

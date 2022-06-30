@@ -1,5 +1,5 @@
 .input {
-    width: 60%;
+    width: 50%;
     margin: 10px 0;
     padding: 10px;
     height: 32px;
@@ -39,6 +39,6 @@
 .location-icon{
     width: 45px !important;
     position: absolute;
-    margin-left: -63%;
+    margin-left: -53%;
     top: 3%;
 }

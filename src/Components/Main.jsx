@@ -6,7 +6,9 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import Hourly from "./HourlyData";
 import './main.css';
-import TempDetails from "./Current";
+import CurrentTemp from "./Current";
+import TempDetails from "./TempDetail";
+import Suntime from "./Suntime";
 
 function Main() {
     const [query, setQuery] = useState(null);
@@ -54,8 +56,10 @@ function Main() {
                         <Forecast title="daily forecast" items={weather.daily} />
                     </div>
                     <div className="forecast-data">
-                        <TempDetails weather={weather} />
+                        <CurrentTemp weather={weather} />
                         <Hourly items={weather.hourly} />
+                        <TempDetails weather={weather} />
+                        <Suntime weather={weather} />
                     </div>
                 </>
             )}

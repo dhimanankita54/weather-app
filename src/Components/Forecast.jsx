@@ -1,5 +1,5 @@
 import React from "react";
-import { iconUrlFromCode } from "./service/weather";
+import getFormattedWeatherData, { iconUrlFromCode } from "./service/weather";
 import './WeekDay.css'
 
 function Forecast({ title, items }) {
@@ -19,6 +19,7 @@ function Forecast({ title, items }) {
                             className="w-12 my-1"
                             alt=""
                         />
+                        <p className="font">{item.detail}</p>
 
                     </div>
                 ))}

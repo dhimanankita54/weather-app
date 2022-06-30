@@ -16,7 +16,7 @@ const formatCurrentWeather = (data) => {
   console.log(data);
   const {
     coord: { lat, lon },
-    main: { temp, feels_like, temp_min, temp_max, humidity },
+    main: { temp, feels_like, temp_min, temp_max, humidity, pressure },
     name,
     dt,
     sys: { country, sunrise, sunset },
@@ -34,6 +34,7 @@ const formatCurrentWeather = (data) => {
     temp_min,
     temp_max,
     humidity,
+    pressure,
     name,
     dt,
     country,
@@ -52,6 +53,7 @@ const formatForecastWeather = (data) => {
       title: formatToLocalTime(d.dt, timezone, "ccc"),
       temp: d.temp.day,
       icon: d.weather[0].icon,
+      detail : d.weather[0].details
     };
   });
 
