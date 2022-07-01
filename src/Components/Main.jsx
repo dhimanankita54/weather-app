@@ -9,6 +9,7 @@ import './main.css';
 import CurrentTemp from "./Current";
 import TempDetails from "./TempDetail";
 import Suntime from "./Suntime";
+import Sungraph from "./Sungraph";
 
 function Main() {
     const [query, setQuery] = useState(null);
@@ -60,6 +61,7 @@ function Main() {
                         <Hourly items={weather.hourly} />
                         <TempDetails weather={weather} />
                         <Suntime weather={weather} />
+                        <Sungraph weather={weather} />
                     </div>
                 </>
             )}
