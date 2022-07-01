@@ -26,6 +26,8 @@ const formatCurrentWeather = (data) => {
 
   const { main: details, icon } = weather[0];
 
+  console.log(weather[0])
+
   return {
     lat,
     lon,
@@ -46,14 +48,17 @@ const formatCurrentWeather = (data) => {
   };
 };
 
+
 const formatForecastWeather = (data) => {
   let { timezone, daily, hourly } = data;
+
   daily = daily.slice(1, 9).map((d) => {
+
     return {
       title: formatToLocalTime(d.dt, timezone, "ccc"),
       temp: d.temp.day,
       icon: d.weather[0].icon,
-      detail : d.weather[0].details
+      detail: d.weather[0].main
     };
   });
 

@@ -16,6 +16,7 @@ function Forecast({ title, items }) {
                         <img
                             src={iconUrlFromCode(item.icon)}
                             alt=""
+                            className="icon"
                         />
                         <p className="font">{item.detail}</p>
 

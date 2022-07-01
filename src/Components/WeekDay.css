@@ -4,6 +4,7 @@
     width: 55%;
     justify-content: space-evenly;
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .font{
@@ -17,4 +18,9 @@
 
 .sun-graph{
     padding: 20px;
+}
+.icon{
+    margin: 0;
+    padding: 0;
+    width: 60%;
 }
