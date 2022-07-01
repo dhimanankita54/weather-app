@@ -32,26 +32,23 @@ function Inputs({ setQuery, units, setUnits }) {
   };
 
   return (
-    <div className="flex flex-row justify-center my-6">
-      <div className="flex flex-row w-3/4 items-center justify-center space-x-4">
+    <div>
+      <div>
         <input
           value={city}
           onChange={(e) => setCity(e.currentTarget.value)}
           type="text"
           placeholder="Search for city...."
-          className="input text-xl font-light p-2 w-full shadow-xl focus:outline-none capitalize placeholder:lowercase"
+          className="input"
         />
         <UilSearch
           size={25}
-          className="search-icon text-white cursor-pointer transition ease-out hover:scale-125"
+          className="search-icon"
           onClick={handleSearchClick}
         />
-        {/* <div className="text-tag">
-          <p>Search</p>
-        </div> */}
         <UilLocationPoint
           size={25}
-          className="location-icon text-white cursor-pointer transition ease-out hover:scale-125"
+          className="location-icon"
           onClick={handleLocationClick}
         />
       </div>
