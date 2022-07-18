@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { UilSearch, UilLocationPoint } from "@iconscout/react-unicons";
 import { toast } from "react-toastify";
 import './search.css'
+import debounce from "lodash.debounce";
 
-function Inputs({ setQuery, units, setUnits }) {
+function Inputs({ setQuery, units, setUnits, debounceChange }) {
   const [city, setCity] = useState("");
 
   const handleUnitsChange = (e) => {
@@ -30,6 +31,11 @@ function Inputs({ setQuery, units, setUnits }) {
       });
     }
   };
+
+  const handleChange = (e) => {
+      setCity(e.currentTarget.value);
+      debounceChange(e.currentTarget.value);
+  }
 
   return (
     <div>

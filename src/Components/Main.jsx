@@ -10,11 +10,26 @@ import CurrentTemp from "./Current";
 import TempDetails from "./TempDetail";
 import Suntime from "./Suntime";
 import Sungraph from "./Sungraph";
+import debounce from "lodash.debounce";
+import { useCallback } from "react";
 
 function Main() {
     const [query, setQuery] = useState(null);
     const [units, setUnits] = useState("metric");
     const [weather, setWeather] = useState(null);
+
+
+    const getData = () => {
+        getFormattedWeatherData({ ...query, units }).then((data) => {
+            toast.success(
+                `Successfully fetched weather for ${data.name}, ${data.country}.`
+            );
+
+            setWeather(data);
+        });
+    }
+
+    const debounceChange = useCallback(debounce(getData, 1000), [])
 
     useEffect(() => {
         const fetchWeather = async () => {
@@ -34,22 +49,27 @@ function Main() {
                 });
             } else {
                 toast.info("Fetching weather for " + message);
-                await getFormattedWeatherData({ ...query, units }).then((data) => {
-                    toast.success(
-                        `Successfully fetched weather for ${data.name}, ${data.country}.`
-                    );
+                await getData();
+                // await getFormattedWeatherData({ ...query, units }).then((data) => {
+                //     toast.success(
+                //         `Successfully fetched weather for ${data.name}, ${data.country}.`
+                //     );
 
-                    setWeather(data);
-                });
+                //     setWeather(data);
+                // });
             }
         };
 
         fetchWeather();
+
     }, [query, units]);
+
+
+
 
     return (
         <div>
-            <Inputs setQuery={setQuery} units={units} setUnits={setUnits} />
+            <Inputs setQuery={setQuery} units={units} setUnits={setUnits} debounceChange={debounceChange} />
 
             {weather && (
                 <>
