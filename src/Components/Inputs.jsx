@@ -35,6 +35,7 @@ function Inputs({ setQuery, units, setUnits, debounceChange }) {
   const handleChange = (e) => {
       setCity(e.currentTarget.value);
       debounceChange(e.currentTarget.value);
+      console.log(city)
   }
 
   return (
@@ -42,7 +43,7 @@ function Inputs({ setQuery, units, setUnits, debounceChange }) {
       <div>
         <input
           value={city}
-          onChange={(e) => setCity(e.currentTarget.value)}
+          onChange={handleChange}
           type="text"
           placeholder="Search for city...."
           className="input"

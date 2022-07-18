@@ -19,8 +19,8 @@ function Main() {
     const [weather, setWeather] = useState(null);
 
 
-    const getData = () => {
-        getFormattedWeatherData({ ...query, units }).then((data) => {
+    const getData = async () => {
+        await getFormattedWeatherData({ ...query, units }).then((data) => {
             toast.success(
                 `Successfully fetched weather for ${data.name}, ${data.country}.`
             );
@@ -62,7 +62,7 @@ function Main() {
 
         fetchWeather();
 
-    }, [query, units]);
+    }, [query, units, debounceChange]);
 
 
 
