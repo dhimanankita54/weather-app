@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { UilSearch, UilLocationPoint } from "@iconscout/react-unicons";
 import { toast } from "react-toastify";
-import './search.css'
+import "./search.css";
 import debounce from "lodash.debounce";
 
-function Inputs({ setQuery, units, setUnits, debounceChange }) {
-  const [city, setCity] = useState("");
+function Inputs({ query, setQuery, units, setUnits, debounceChange }) {
+  const [city, setCity] = useState(query || "");
 
   const handleUnitsChange = (e) => {
     const selectedUnit = e.currentTarget.name;
@@ -33,14 +33,23 @@ function Inputs({ setQuery, units, setUnits, debounceChange }) {
   };
 
   const handleChange = (e) => {
-      setCity(e.currentTarget.value);
-      debounceChange(e.currentTarget.value);
-      console.log(city)
-  }
+    setCity(e.currentTarget.value);
+    debounceChange(e.currentTarget.value);
+    console.log(city);
+  };
+
+  useEffect(() => {
+    setCity(query)
+  },[query])
 
   return (
     <div>
       <div>
+        <UilLocationPoint
+          size={25}
+          className="location-icon"
+          onClick={handleLocationClick}
+        />
         <input
           value={city}
           onChange={handleChange}
@@ -52,11 +61,6 @@ function Inputs({ setQuery, units, setUnits, debounceChange }) {
           size={25}
           className="search-icon"
           onClick={handleSearchClick}
-        />
-        <UilLocationPoint
-          size={25}
-          className="location-icon"
-          onClick={handleLocationClick}
         />
       </div>
     </div>

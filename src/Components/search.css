@@ -1,4 +1,66 @@
 .input {
+  width: 80%;
+  margin: 10px 0;
+  padding: 10px;
+  height: 32px;
+  border-radius: 5px;
+  font-size: 15px;
+  -webkit-box-shadow: 0 0 20px lightgrey;
+  box-shadow: 0 0 20px lightgrey;
+  border: none;
+  cursor: pointer;
+  padding-left: 37px;
+  font-weight: bold;
+}
+
+.input:hover {
+  -webkit-box-shadow: 0 0 30px lightgrey;
+  box-shadow: 0 0 30px lightgrey;
+}
+
+.input:focus {
+  outline: none;
+  -webkit-box-shadow: 0 0 30px lightgrey;
+  box-shadow: 0 0 30px lightgrey;
+}
+
+.input::placeholder {
+  color: black;
+  font-weight: bold;
+}
+
+.search-icon {
+  width: 25px !important;
+  position: absolute;
+  margin-left: -5%;
+  top: 3%;
+  cursor: pointer;
+}
+
+.location-icon {
+  width: 45px !important;
+  position: absolute;
+  top: 3%;
+  cursor: pointer;
+}
+
+.text-tag {
+  font-size: 1.1rem;
+  margin-left: 49%;
+  margin-top: -2%;
+  visibility: hidden;
+}
+
+.text-tag > p {
+  visibility: hidden;
+}
+
+.text-tag:hover > p {
+  visibility: visible;
+}
+
+@media only screen and (min-width: 992px) {
+  .input {
     width: 50%;
     margin: 10px 0;
     padding: 10px;
@@ -11,51 +73,5 @@
     cursor: pointer;
     padding-left: 37px;
     font-weight: bold;
-}
-
-.input:hover {
-    -webkit-box-shadow: 0 0 30px lightgrey;
-    box-shadow: 0 0 30px lightgrey;
-}
-
-.input:focus {
-    outline: none;
-    -webkit-box-shadow: 0 0 30px lightgrey;
-    box-shadow: 0 0 30px lightgrey;
-}
-
-.input::placeholder {
-    color: black;
-    font-weight: bold;
-}
-
-.search-icon {
-    width: 25px !important;
-    position: absolute;
-    margin-left: -3%;
-    top: 3%;
-    cursor: pointer;
-}
-
-.location-icon {
-    width: 45px !important;
-    position: absolute;
-    margin-left: -53%;
-    top: 3%;
-    cursor: pointer;
-}
-
-.text-tag{
-    font-size: 1.1rem;
-    margin-left: 49%;
-    margin-top: -2%;
-    visibility: hidden;
-}
-
-.text-tag>p{
-    visibility: hidden;
-}
-
-.text-tag:hover>p{
-    visibility: visible;
+  }
 }

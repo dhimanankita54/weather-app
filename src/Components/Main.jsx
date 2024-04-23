@@ -18,7 +18,6 @@ function Main() {
     const [units, setUnits] = useState("metric");
     const [weather, setWeather] = useState(null);
 
-
     const getData = async () => {
         await getFormattedWeatherData({ ...query, units }).then((data) => {
             toast.success(
@@ -30,6 +29,8 @@ function Main() {
     }
 
     const debounceChange = useCallback(debounce(getData, 1000), [])
+
+    console.log(weather)
 
     useEffect(() => {
         const fetchWeather = async () => {
@@ -64,12 +65,9 @@ function Main() {
 
     }, [query, units, debounceChange]);
 
-
-
-
     return (
         <div>
-            <Inputs setQuery={setQuery} units={units} setUnits={setUnits} debounceChange={debounceChange} />
+            <Inputs query={weather && weather?.name} setQuery={setQuery} units={units} setUnits={setUnits} debounceChange={debounceChange} />
 
             {weather && (
                 <>
