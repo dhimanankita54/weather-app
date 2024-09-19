@@ -1,7 +1,7 @@
 import { DateTime } from "luxon";
 
 const API_KEY = "00e1066df152855de0ff69878024b778";
-const BASE_URL = "https://api.openweathermap.org/data/3.0";
+const BASE_URL = "https://api.openweathermap.org/data";
 
 // https://api.openweathermap.org/data/2.5/onecall?lat=48.8534&lon=2.3488&exclude=current,minutely,hourly,alerts&appid=1fa9ff4126d95b8db54f3897a208e91c&units=metric
 
@@ -75,13 +75,13 @@ const formatForecastWeather = (data) => {
 
 const getFormattedWeatherData = async (searchParams) => {
   const formattedCurrentWeather = await getWeatherData(
-    "weather",
+    "2.5/weather",
     searchParams
   ).then(formatCurrentWeather);
 
   const { lat, lon } = formattedCurrentWeather;
 
-  const formattedForecastWeather = await getWeatherData("onecall", {
+  const formattedForecastWeather = await getWeatherData("3.0/onecall", {
     lat,
     lon,
     exclude: "current,minutely,alerts",
